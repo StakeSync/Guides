@@ -1,6 +1,6 @@
 # Installation Guide - Cardano Node + DB Sync + Smash
 
-Last Update: 2020-12-27  --  Cardano Node 1.24.2, DB Sync 7.1, Smash 1.3
+Last Update: 2021-01-12  --  Cardano Node 1.24.2, DB Sync 7.1, Smash 1.3
 
 This is a simple tutorial to set up the latest Cardano Node with DB Sync and Smash. It is based on the [Guild Operators guide](https://cardano-community.github.io/guild-operators) using Cabal. Check it out to get more background information or if you want to set up a stake pool, this guide mainly focuses on DB Sync and Smash.
 
@@ -279,12 +279,6 @@ SMASHPGPASSFILE=config/pgpass ./scripts/postgresql-setup.sh --createdb
 Run migrations.
 ```
 SMASHPGPASSFILE=config/pgpass cabal run smash-exe -- run-migrations --config config/mainnet-config.yaml --mdir ./schema
-```
-
-Set GHC back to the previous version.
-```
-ghcup set ghc 8.10.2
-ghc --version
 ```
 
 Create an empty folder for the state-dir.

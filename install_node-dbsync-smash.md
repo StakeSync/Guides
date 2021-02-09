@@ -1,6 +1,6 @@
 # Installation Guide - Cardano Node + DB Sync + Smash
 
-Last Update: 2021-02-09  --  Cardano Node 1.25.1, DB Sync 8.0.0, Smash 1.4
+Last Update: 2021-02-09  --  Cardano Node 1.25.1, DB Sync 8.0.0, Smash 1.4.0
 
 This is a simple tutorial to set up the latest Cardano Node with DB Sync and Smash. It is based on the [Guild Operators guide](https://cardano-community.github.io/guild-operators) using Cabal. Check it out to get more background information or if you want to set up a stake pool, this guide mainly focuses on DB Sync and Smash.
 

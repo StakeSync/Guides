@@ -1,6 +1,6 @@
 # Installation Guide - Cardano Node + DB Sync + Smash
 
-Last Update: 2021-01-12  --  Cardano Node 1.24.2, DB Sync 7.1, Smash 1.3
+Last Update: 2021-02-09  --  Cardano Node 1.25.1, DB Sync 8.0.0, Smash 1.4
 
 This is a simple tutorial to set up the latest Cardano Node with DB Sync and Smash. It is based on the [Guild Operators guide](https://cardano-community.github.io/guild-operators) using Cabal. Check it out to get more background information or if you want to set up a stake pool, this guide mainly focuses on DB Sync and Smash.
 
@@ -158,7 +158,7 @@ git clone https://github.com/input-output-hk/cardano-node
 cd cardano-node
 git fetch --tags --all
 git pull
-git checkout 1.24.2
+git checkout 1.25.1
 nohup $CNODE_HOME/scripts/cabal-build-all.sh -o &
 ```
 
@@ -180,12 +180,6 @@ After your node is synced up, proceed installing DB Sync.
 Documentation: [https://docs.cardano.org/projects/cardano-db-sync/en/latest](https://docs.cardano.org/projects/cardano-db-sync/en/latest)
 
 
-Back up the binaries that get overwritten with older versions during the build.
-```
-cp ~/.cabal/bin/cardano-node ~/.cabal/bin/cardano-node-1.24.2
-cp ~/.cabal/bin/db-analyser ~/.cabal/bin/db-analyser-1.24.2
-```
-
 Clone and build the DB Sync repository.
 ```
 cd ~/git
@@ -194,17 +188,11 @@ cd cardano-db-sync
 git fetch --tags --all
 git pull
 echo -e "package cardano-crypto-praos\n flags: -external-libsodium-vrf" > cabal.project.local
-git checkout 7.1.0
+git checkout 8.0.0
 nohup $CNODE_HOME/scripts/cabal-build-all.sh &
 ```
 
 Run `tail nohup.out -f` to follow the process. 
-
-Once completed, restore the overwritten binaries.
-```
-mv ~/.cabal/bin/cardano-node-1.24.2 ~/.cabal/bin/cardano-node
-mv ~/.cabal/bin/db-analyser-1.24.2 ~/.cabal/bin/db-analyser
-```
 
 Create an empty folder for the state-dir.
 ```
@@ -258,7 +246,7 @@ git clone https://github.com/input-output-hk/smash.git
 cd smash
 git fetch --tags --all
 git pull
-git checkout 1.3.0
+git checkout 1.4.0
 nohup cabal build smash &
 tail nohup.out -f
 ```

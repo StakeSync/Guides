@@ -1,10 +1,10 @@
 # Installation Guide - Cardano Node + DB Sync + Smash
 
-Last Update: 2021-02-09  --  Cardano Node 1.25.1, DB Sync 8.0.0, Smash 1.4.0
+Last Update: 2021-04-27  --  Cardano Node 1.26.2, DB Sync 9.0.0, Smash 1.4.0
 
 This is a simple tutorial to set up the latest Cardano Node with DB Sync and Smash. It is based on the [Guild Operators guide](https://cardano-community.github.io/guild-operators) using Cabal. Check it out to get more background information or if you want to set up a stake pool, this guide mainly focuses on DB Sync and Smash.
 
-Live preview of the resulting databases here: [https://stakesync.io/db](https://stakesync.io/db) 
+Preview of the resulting databases here: [https://stakesync.io/db](https://stakesync.io/db) 
 
 
 ## Prerequisites
@@ -158,7 +158,7 @@ git clone https://github.com/input-output-hk/cardano-node
 cd cardano-node
 git fetch --tags --all
 git pull
-git checkout 1.25.1
+git checkout 1.26.2
 nohup $CNODE_HOME/scripts/cabal-build-all.sh -o &
 ```
 
@@ -188,7 +188,7 @@ cd cardano-db-sync
 git fetch --tags --all
 git pull
 echo -e "package cardano-crypto-praos\n flags: -external-libsodium-vrf" > cabal.project.local
-git checkout 8.0.0
+git checkout 9.0.0
 nohup $CNODE_HOME/scripts/cabal-build-all.sh &
 ```
 
